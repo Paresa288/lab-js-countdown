@@ -27,7 +27,7 @@ function startCountdown() {
       clearInterval(timer);
       showToast();
     }
-  }, 1000)
+  }, 10)
 
 }
 
@@ -38,7 +38,11 @@ function startCountdown() {
 function showToast(message) {
   console.log("showToast called!");
 
-  // Your code goes here ...
+  const toast = document.querySelector("#toast");
+  toast.classList.add("show");
+  setTimeout(() => {
+    toast.classList.remove("show");
+  }, 3000)
 
 
 
