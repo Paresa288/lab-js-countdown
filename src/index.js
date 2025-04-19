@@ -40,11 +40,15 @@ function showToast(message) {
 
   const toast = document.querySelector("#toast");
   toast.classList.add("show");
-  setTimeout(() => {
+  timer = setTimeout(() => {
     toast.classList.remove("show");
   }, 3000)
 
-
+  const closeBtn = document.querySelector("#close-toast");
+  closeBtn.addEventListener("click", () => {
+    clearTimeout(timer);
+    toast.classList.remove("show");
+  })
 
 
   // BONUS: ITERATION 4: TOAST CLOSE BUTTON
