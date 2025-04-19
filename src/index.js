@@ -17,9 +17,18 @@ startButton.addEventListener("click", () => startCountdown());
 // ITERATION 2: Start Countdown
 function startCountdown() {
   console.log("startCountdown called!");
+  startButton.disabled = true;
 
+  timer = setInterval(() => {
+    remainingTime--;
+    let time = document.querySelector("#time");
+    time.innerText = remainingTime;
+    if(remainingTime <= 0) {
+      clearInterval(timer);
+      showToast();
+    }
+  }, 1000)
 
-  // Your code goes here ...
 }
 
 
